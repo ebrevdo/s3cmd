@@ -87,6 +87,7 @@ class Config(object):
     encoding = "utf-8"
     urlencoding_mode = "normal"
     log_target_prefix = ""
+    server_side_encryption = False
     reduced_redundancy = False
     follow_symlinks = False
     socket_timeout = 300

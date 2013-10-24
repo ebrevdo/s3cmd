@@ -424,6 +424,8 @@ class S3(object):
         ## Other Amazon S3 attributes
         if self.config.acl_public:
             headers["x-amz-acl"] = "public-read"
+        if self.config.server_side_encryption:
+            headers["x-amz-server-side-encryption"] = "AES256"
         if self.config.reduced_redundancy:
             headers["x-amz-storage-class"] = "REDUCED_REDUNDANCY"
 
@@ -496,6 +498,8 @@ class S3(object):
         headers['x-amz-metadata-directive'] = "COPY"
         if self.config.acl_public:
             headers["x-amz-acl"] = "public-read"
+        if self.config.server_side_encryption:
+            headers["x-amz-server-side-encryption"] = "AES256"
         if self.config.reduced_redundancy:
             headers["x-amz-storage-class"] = "REDUCED_REDUNDANCY"
         # if extra_headers:
